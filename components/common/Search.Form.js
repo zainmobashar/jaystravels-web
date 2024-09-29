@@ -1,4 +1,5 @@
 import AutoComplete from "@/components/common/AutoComplete";
+import AutoComplete2 from "@/components/common/AutoComplete2"
 import {
   faCalendar,
   faCrosshairs,
@@ -13,6 +14,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import PassengersQty from "./Passengers.Qty";
+import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 const SearchForm = (props) => {
   const [startDate, setStartDate] = useState(new Date());
@@ -31,20 +33,20 @@ const SearchForm = (props) => {
   const fromItems = [
     {
       id: 0,
-      country: "paris, france",
-      destination: "Charles de Gaulle Airport",
-      extension: "par",
+      country: "LON paris, france",
+      destination: "LON Charles de Gaulle Airport",
+      extension: "LON par",
     },
     {
       id: 1,
-      country: "Dubai, UAE",
-      destination: "Dubai International Airport",
+      country: "DXB Dubai, UAE",
+      destination: "DXB Dubai International Airport",
       extension: "par",
     },
     {
       id: 2,
-      country: "london",
-      destination: "Heathrow",
+      country: "london LHR",
+      destination: "LHR Heathrow",
       extension: "par",
     },
     {
@@ -122,16 +124,17 @@ const SearchForm = (props) => {
         <Row className="g-lg-3 g-0 m-0 align-items-end">
           <Col lg={props.col1 || "12"} md={props.col1 || "12"}>
             {props.showLabel && <Label>from</Label>}
-            <AutoComplete
+            <AutoComplete2
               items={fromItems}
               placeholder="Form"
               className="position-relative z-2"
               icon={faCrosshairs}
             />
+            
           </Col>
           <Col lg={props.col1 || "12"} md={props.col1 || "12"}>
             {props.showLabel && <Label>to</Label>}
-            <AutoComplete
+            <AutoComplete2
               items={toItems}
               placeholder="To"
               className="position-relative z-1"
