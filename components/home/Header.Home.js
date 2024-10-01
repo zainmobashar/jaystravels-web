@@ -7,7 +7,7 @@ const HeaderHome = () => {
     <>
       <div className="headerHome cab-section flight-section p-0">
         <div className="cloud">
-          {/* <Image src="../assets/images/flights/cloud.png" alt="" className="bg-img d-none"> */}
+          <Image src="../assets/images/flights/cloud.png" width="50" height="50" alt="" className="bg-img d-none"/>
         </div>
         <Container>
           <Col lg={6}>
